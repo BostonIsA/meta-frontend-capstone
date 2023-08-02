@@ -16,3 +16,11 @@ footer {
     bottom: 0;
     position: absolute;
 }
+
+h1, h2{
+    font-family: 'Markazi Text';
+}
+
+p, label {
+    font-family: 'Karla';
+}
