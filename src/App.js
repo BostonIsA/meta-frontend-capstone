@@ -6,12 +6,22 @@ import "./App.css";
 import PageInDevelopment from "./Components/PageInDevelopment";
 import BookingForm from "./Components/BookingForm";
 import ConfirmedBooking from './Components/ConfirmedBooking'
+import { useEffect, useState } from "react";
 
-// TODO Available time, lift state up
-// TODO Unit tests: Static heading text, user can submit the information, reducer ^^
-// TODO Connecting the bookings page to the API <script src="https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js"></script>
-// TODO Aria label, html for attribute
 function App() {
+  const [jsonData, setJsonData] = useState([]);
+
+  const initializeTimes = () => {
+    fetch('./FakeAPI_FetchTimes.json')
+      .then(response => response.json())
+      .then(data => setJsonData(data))
+      .catch(err => console.log("ERROR: " + err));
+  }
+
+  useEffect(() => {
+    initializeTimes();
+  },[]);
+
   return (
     <>
       <Header />
@@ -19,7 +29,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<PageInDevelopment />}></Route>
         <Route path="/menu" element={<PageInDevelopment />}></Route>
-        <Route path="/reservations" element={<BookingForm />}></Route>
+        <Route path="/reservations" element={<BookingForm jsonData={jsonData} />}></Route>
         <Route path="/order online" element={<PageInDevelopment />}></Route>
         <Route path="/login" element={<PageInDevelopment />}></Route>
         <Route path="/bookingconfirmed" element={<ConfirmedBooking />}></Route>

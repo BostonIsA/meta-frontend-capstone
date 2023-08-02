@@ -4,7 +4,7 @@ function About() {
     return (
         <Stack position={"inherit"} paddingBottom={350}>
             <HStack>
-                <VStack w={"50%"} paddingLeft={"25%"} alignItems={"flex-start"}>
+                <VStack w={"50%"} paddingLeft={"15%"} alignItems={"flex-start"}>
                     <Heading size='2xl' paddingTop={20}>
                         Little Lemon
                     </Heading>
@@ -16,12 +16,16 @@ function About() {
                     </Text>
                 </VStack>
                 <VStack w={"50%"} paddingRight={"25%"}>
-                    <Image position={"absolute"} top={"inherit"} mt={75} left={"65%"} zIndex={1} borderRadius="2xl" objectFit="cover" src="images/Mario and Adrian A.jpg" alt="Picture of one of Mario and Adrian A" w={250} h={250} />
-                    <Image position={"relative"} zIndex={2} borderRadius="2xl" objectFit="cover" src="images/Mario and Adrian b.jpg" alt="Picture of one of Mario and Adrian B" w={250} h={250} />
+                <Image mt={8} ml={16} zIndex={2} borderRadius="2xl" objectFit="cover" src="images/Mario and Adrian Combined.png" alt="Picture of Mario and Adrian" />
                 </VStack>
             </HStack>
         </Stack>
     );
 }
+
+/*
+<Image position={"absolute"} top={"inherit"} mt={75} left={"65%"} zIndex={1} borderRadius="2xl" objectFit="cover" src="images/Mario and Adrian A.jpg" alt="Picture of one of Mario and Adrian A" w={250} h={250} />
+                    <Image position={"relative"} zIndex={2} borderRadius="2xl" objectFit="cover" src="images/Mario and Adrian b.jpg" alt="Picture of one of Mario and Adrian B" w={250} h={250} />
+*/
 
 export default About;
